@@ -1,0 +1,45 @@
+server:
+  port: 10010
+
+spring:
+  datasource:
+    username: root
+    password: 2642
+    url: jdbc:mysql://127.0.0.1:3306/gulimall_pms?serverTimezone=GMT%2B8&characterEncoding=utf8&useSSL=false
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+    alicloud:
+      access-key: LTAI4Fec4n99HjGECZGjxVx8
+      secret-key: By1KnhZRjUR8imapMzYTqR6m0F1s1n
+      oss:
+        endpoint: oss-cn-beijing.aliyuncs.com
+  messages:
+    encoding: UTF-8
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+  thymeleaf:
+    cache: false
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password: 2642
+
+mybatis-plus:
+  mapper-location: classpath*:/mapper/**/*.xml
+  global-config:
+    db-config:
+      id-type: auto
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+
+
+logging:
+  level:
+    com.atguigu.gulimall: info
+    org.springframework.cloud.openfeign: debug
+    org.springframework.cloud.sleuth: debug
+
+
