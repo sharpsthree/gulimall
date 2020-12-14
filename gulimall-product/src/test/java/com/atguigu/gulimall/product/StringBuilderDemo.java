@@ -5,7 +5,7 @@ public class StringBuilderDemo {
 
     public static void main(String[] args) throws InterruptedException {
         StringBuilder stringBuilder = new StringBuilder();
-//        StringBuffer stringBuilder = new StringBuffer();
+        StringBuffer stringBuilder2 = new StringBuffer();
         for (int i = 0; i < 10; i++){
             new Thread(new Runnable() {
                 @Override

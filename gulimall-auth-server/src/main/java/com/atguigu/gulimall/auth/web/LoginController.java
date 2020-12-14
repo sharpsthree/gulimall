@@ -13,6 +13,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.util.StringUtils;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
@@ -48,6 +49,13 @@ public class LoginController {
 
     @Autowired
     MemberFeignService memberFeignService;
+
+    /* 首页面跳转 */
+    @GetMapping({"/"})
+    public String indexPage(Model model) {
+        return "redirect:http://auth.gulimall.com/login.html";
+    }
+
 
     /**
      * 发送验证码 - 调用第三方服务向阿里云发送验证码
